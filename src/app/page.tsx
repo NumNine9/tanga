@@ -639,7 +639,7 @@ export default function LandingPage() {
           </div>
           <div className="mt-8 border-t border-gray-800 pt-6 flex flex-col-reverse gap-4 sm:flex-row sm:justify-between sm:gap-0">
             <p className="text-xs text-gray-400">© {new Date().getFullYear()} Tanga Systems. All rights reserved.</p>
-            <div className="flex items-center space-x-4">
+            {/* <div className="flex items-center space-x-4">
               {["twitter", "facebook", "instagram", "linkedin"].map((social) => (
                 <Link key={social} href={`#${social}`} className="text-gray-400 hover:text-white">
                   <span className="sr-only">{social}</span>
@@ -659,7 +659,7 @@ export default function LandingPage() {
                   </svg>
                 </Link>
               ))}
-            </div>
+            </div> */}
           </div>
         </div>
       </footer>
