@@ -493,7 +493,7 @@ export default function LandingPage() {
                 { value: "3", label: "Projects Completed" },
                 { value: "3", label: "Happy Clients" },
                 { value: "4", label: "Years Experience" },
-                { value: "3", label: "Team Members" },
+                { value: "4", label: "Team Members" },
               ].map((stat, index) => (
                 <div key={index} className="flex flex-col items-center justify-center space-y-2 text-center">
                   <div className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-500">
