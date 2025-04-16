@@ -174,7 +174,7 @@ export default function LandingPage() {
               </div>
             </div>
             <div className="mx-auto grid max-w-5xl gap-8 py-12 md:grid-cols-2 lg:grid-cols-3">
-              {[{name: "Chicky Chory", image: ccIcon, href: "chicky-chory.netlify.app" }, {name: "The Commit Log", image: clIcon, href: "https://the-commit-log.netlify.app" }].map((item) => (
+              {[{name: "Chicky Chory", image: ccIcon, href: "https://chicky-chory.netlify.app" }, {name: "The Commit Log", image: clIcon, href: "https://the-commit-log.netlify.app" }].map((item) => (
                 <div key={item.name} className="group relative overflow-hidden rounded-lg shadow-md">
                   <Link href={item.href} target="_blank">
                     <Image
