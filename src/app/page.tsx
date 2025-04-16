@@ -11,6 +11,7 @@ import nologo from "../../public/logo-no-background.svg"
 import ccIcon from "../../public/CCicon.png"
 import clIcon from "../../public/commit-log.jpg"
 import { useState } from "react"
+import PricingSection from "@/components/PricingSection"
 
 
 export default function LandingPage() {
@@ -50,14 +51,17 @@ export default function LandingPage() {
               <Link href="#team" className="transition-colors hover:text-[#468fe1]">
                 Team
               </Link>
+              <Link href="#pricing" className="transition-colors hover:text-[#468fe1]">
+                Pricing
+              </Link>
               <Link href="#contact" className="transition-colors hover:text-[#468fe1]">
                 Contact
-              </Link>
+              </Link>              
             </nav>
             <Link href="#contact">
             <Button
               size="sm"
-              className="bg-gradient-to-r from-[#468fe1] to-purple-600 hover:from-purple-600 hover:to-[#468fe1]"
+              className="bg-gradient-to-r from-[#468fe1] to-purple-600 hover:from-purple-600 hover:to-[#468fe1] hover:cursor-pointer"
             >
               Get Started
             </Button>
@@ -84,7 +88,7 @@ export default function LandingPage() {
                 </div>
                 <div className="flex flex-col gap-2 min-[400px]:flex-row">
                 <Link href="#contact">
-                  <Button className="bg-gradient-to-r  from-purple-600 to-[#468fe1]">
+                  <Button className="bg-gradient-to-r  from-purple-600 to-[#468fe1] hover:cursor-pointer">
                       Get Started
                   </Button>
                 </Link>
@@ -366,7 +370,7 @@ export default function LandingPage() {
                 },
                 { name: "Jordan Mavhundudzo", role: "UX Specialist", image: "https://images.pexels.com/photos/2918513/pexels-photo-2918513.jpeg?auto=compress&cs=tinysrgb&w=600" },
               ].map((member, index) => (
-                <div key={index} className="group relative overflow-hidden rounded-lg">
+                <div key={index} className="group relative overflow-hidden rounded-lg hover:cursor-pointer">
                   <img
                     src={member.image || "/placeholder.svg"}
                     alt={member.name}
@@ -385,7 +389,7 @@ export default function LandingPage() {
             </div>
           </div>
         </section>
-
+        <PricingSection/>
         {/* Contact Section */}
         <section
           id="contact"
@@ -403,8 +407,8 @@ export default function LandingPage() {
                   </p>
                 </div>
                 <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                  <Button className="bg-white text-purple-600 hover:bg-gray-100">Get Started</Button>
-                  <Button variant="outline" className="text-green-700 border-white hover:bg-white/10 hover:text-white">
+                  <Button className="bg-white text-purple-600 hover:bg-gray-100 hover:cursor-pointer">Get Started</Button>
+                  <Button variant="outline" className="text-green-700 border-white hover:bg-white/10 hover:text-white hover:cursor-pointer">
                     Schedule a Call
                   </Button>
                 </div>
@@ -441,6 +445,7 @@ export default function LandingPage() {
                           </label>
                           <input
                             id="name"
+                            onChange={(e)=>setName(e.target.value)}
                             className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                             placeholder="Enter your name"
                           />
@@ -451,6 +456,7 @@ export default function LandingPage() {
                           </label>
                           <input
                             id="email"
+                            onChange={(e)=>setEmail(e.target.value)}
                             type="email"
                             className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                             placeholder="Enter your email"
@@ -461,13 +467,14 @@ export default function LandingPage() {
                             Message
                           </label>
                           <textarea
+                            onChange={(e)=>setMessage(e.target.value)}
                             id="message"
                             className="flex min-h-[120px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                             placeholder="Enter your message"
                           />
                         </div>
                       </div>
-                      <Button className="w-full bg-gradient-to-r from-[#468fe1] to-purple-600 hover:from-purple-600 hover:to-[#468fe1]">
+                      <Button onClick={handleSubmit} className="w-full bg-gradient-to-r from-[#468fe1] to-purple-600 hover:from-purple-600 hover:to-[#468fe1] hover:cursor-pointer">
                         Send Message
                       </Button>
                     </form>
@@ -500,7 +507,7 @@ export default function LandingPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-50">
+        {/* <section className="w-full md:py-10 lg:py-20 bg-gray-50">
           <div className=" px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
@@ -519,7 +526,8 @@ export default function LandingPage() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
+        
       </main>
 
       {/* Footer */}
