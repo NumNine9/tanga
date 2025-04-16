@@ -20,6 +20,7 @@ export default function LandingPage() {
   const [message, setMessage] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
     alert("Message sent to TS!")
     setEmail("")
     setMessage("")
@@ -48,9 +49,9 @@ export default function LandingPage() {
               <Link href="#testimonials" className="transition-colors hover:text-[#468fe1]">
                 Testimonials
               </Link>
-              <Link href="#team" className="transition-colors hover:text-[#468fe1]">
+              {/* <Link href="#team" className="transition-colors hover:text-[#468fe1]">
                 Team
-              </Link>
+              </Link> */}
               <Link href="#pricing" className="transition-colors hover:text-[#468fe1]">
                 Pricing
               </Link>
@@ -348,7 +349,7 @@ export default function LandingPage() {
         </section>
 
         {/* Team Section */}
-        <section id="team" className="w-full py-12 md:py-24 lg:py-32 bg-white">
+        {/* <section id="team" className="w-full py-12 md:py-24 lg:py-32 bg-white">
           <div className=" px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
@@ -388,7 +389,7 @@ export default function LandingPage() {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
         <PricingSection/>
         {/* Contact Section */}
         <section
