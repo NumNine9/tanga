@@ -74,11 +74,7 @@ export default function PricingSection() {
                 <li className="flex items-center">
                   <Check className="mr-2 h-4 w-4 text-green-500" />
                   <span>Enhanced Admin Dashboard</span>
-                </li>
-                <li className="flex items-center">
-                  <Check className="mr-2 h-4 w-4 text-green-500" />
-                  <span>Enhanced Admin Dashboard</span>
-                </li>
+                </li>                
                 <li className="flex items-center">
                   <Check className="mr-2 h-4 w-4 text-green-500" />
                   <span>Priority support</span>
