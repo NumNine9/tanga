@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Code, Globe, Layers, MessageSquare, Rocket } from "lucide-react"
 import logo from "../../public/logo-color.svg"
+// import demo from "../../public/locales"
 import navlogo from "../../public/logo-no-background.svg"
 import nologo from "../../public/logo-no-background.svg"
 import ccIcon from "../../public/CCicon.png"
@@ -13,6 +14,7 @@ import clIcon from "../../public/commit-log.jpg"
 import { useState } from "react"
 import PricingSection from "@/components/PricingSection"
 import { BookingSection } from "@/components/booking-section"
+import VideoIntro from "@/components/video-intro"
 
 
 export default function LandingPage() {
@@ -75,41 +77,36 @@ export default function LandingPage() {
 
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="w-full py-6  bg-gradient-to-br from-purple-50 via-white to-blue-50">
-          <div className=" px-4 md:px-6">
-            <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
-              <div className="flex flex-col justify-center space-y-4">
-                <div className="space-y-2">
-                  <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-[#468fe1]">
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-br from-purple-50 via-white to-blue-50">
+          <div className="container px-4 md:px-6">
+            <div className="grid gap-8 lg:grid-cols-[1fr_1fr] lg:gap-12 xl:gap-24 items-center">
+              <div className="flex flex-col justify-center space-y-6">
+                <div className="space-y-4">
+                  <h1 className="text-4xl font-bold tracking-tight sm:text-5xl xl:text-6xl/none bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-[#468fe1]">
                     Transforming Ideas into Digital Experiences
                   </h1>
-                  <p className="max-w-[600px] text-gray-500 md:text-xl">
+                  <p className="max-w-[600px] text-gray-600 md:text-xl dark:text-gray-400">
                     We design and develop stunning websites and applications that drive growth and deliver exceptional
                     user experiences.
                   </p>
                 </div>
-                <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                <Link href="#contact">
-                  <Button className="bg-gradient-to-r  from-purple-600 to-[#468fe1] hover:cursor-pointer">
+                <div className="flex flex-col gap-3 min-[400px]:flex-row">
+                  <Link href="#contact">
+                    <Button className="bg-gradient-to-r from-purple-600 to-[#468fe1] hover:from-purple-700 hover:to-[#3a7bc8] text-white shadow-lg hover:shadow-purple-500/20 transition-all">
                       Get Started
-                  </Button>
-                </Link>
-                <Link href="#work">
-                  <Button variant="outline">View Our Work</Button>
-                </Link>
-                  
+                    </Button>
+                  </Link>
+                  <Link href="#work">
+                    <Button variant="outline" className="border-gray-300 hover:bg-gray-50 hover:border-gray-400 transition-colors">
+                      View Our Work
+                    </Button>
+                  </Link>
                 </div>
               </div>
               <div className="flex items-center justify-center">
-                <div className="relative w-full h-[350px] md:h-[400px] lg:h-[500px]">
-                  <Image
-                    // src="https://thumbs.dreamstime.com/t/software-development-word-cloud-concept-grey-background-88535408.jpg"
-                    src={logo}
-                    alt="Hero Image"
-                    // fill
-                    className="object-contain"
-                    // priority
-                  />
+                <div className="relative w-full aspect-video rounded-xl shadow-2xl overflow-hidden border border-gray-200 hover:shadow-purple-500/30 transition-shadow">
+                  <VideoIntro />
+                  <div className="absolute inset-0 rounded-xl pointer-events-none border border-white/10 mix-blend-overlay" />
                 </div>
               </div>
             </div>
