@@ -12,6 +12,7 @@ import ccIcon from "../../public/CCicon.png"
 import clIcon from "../../public/commit-log.jpg"
 import { useState } from "react"
 import PricingSection from "@/components/PricingSection"
+import { BookingSection } from "@/components/booking-section"
 
 
 export default function LandingPage() {
@@ -435,7 +436,8 @@ export default function LandingPage() {
                   ))}
                 </div> */}
               </div>
-              <div className="flex items-center justify-center">
+              <BookingSection/>
+              {/* <div className="flex items-center justify-center">
                 <Card className="w-full max-w-md">
                   <CardContent className="p-6">
                     <form className="space-y-4">
@@ -481,7 +483,7 @@ export default function LandingPage() {
                     </form>
                   </CardContent>
                 </Card>
-              </div>
+              </div> */}
             </div>
           </div>
         </section>
