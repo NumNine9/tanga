@@ -406,7 +406,10 @@ export default function LandingPage() {
                   </p>
                 </div>
                 <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                  <Button className="bg-white text-purple-600 hover:bg-gray-100 hover:cursor-pointer">Get Started</Button>
+                  {/* <Link href="#contact">
+                    <Button className="bg-white text-purple-600 hover:bg-gray-100 hover:cursor-pointer">Get Started</Button>
+                  </Link> */}
+                  
                   <Button variant="outline" className="text-green-700 border-white hover:bg-white/10 hover:text-white hover:cursor-pointer">
                     Schedule a Call
                   </Button>

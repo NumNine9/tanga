@@ -152,7 +152,7 @@ export function BookingSection() {
         )}
       </CardContent>
       <CardFooter className="flex justify-between border-t p-4">
-        <p className="text-sm text-muted-foreground">Need help? Contact us at support@example.com</p>
+        <p className="text-sm text-muted-foreground">Need help? Contact us at nyagura.george@gmail.com</p>
       </CardFooter>
     </Card>
   )

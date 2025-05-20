@@ -1,6 +1,7 @@
 import { Check } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import Link from "next/link"
 
 export default function PricingSection() {
   return (
@@ -46,9 +47,11 @@ export default function PricingSection() {
               </ul>
             </CardContent>
             <CardFooter className="p-6 pt-0">
+              <Link href="#contact">
               <Button className="w-full bg-gradient-to-r from-[#468fe1] to-purple-600 hover:cursor-pointer text-white" variant="outline">
                 Get Started
               </Button>
+              </Link>
             </CardFooter>
           </Card>
 
@@ -94,7 +97,9 @@ export default function PricingSection() {
               </ul>
             </CardContent>
             <CardFooter className="p-6 pt-0">
-              <Button className="w-full bg-gradient-to-r from-[#468fe1] to-purple-600 hover:cursor-pointer text-white">Get Started</Button>
+              <Link href="#contact">
+                <Button className="w-full bg-gradient-to-r from-[#468fe1] to-purple-600 hover:cursor-pointer text-white">Get Started</Button>
+              </Link>
             </CardFooter>
           </Card>
 
@@ -137,9 +142,12 @@ export default function PricingSection() {
               </ul>
             </CardContent>
             <CardFooter className="p-6 pt-0">
-              <Button className="w-full bg-gradient-to-r from-[#468fe1] to-purple-600 hover:cursor-pointer text-white" variant="outline">
-                Contact Sales
-              </Button>
+              <Link href="#contact">
+                <Button className="w-full bg-gradient-to-r from-[#468fe1] to-purple-600 hover:cursor-pointer text-white" variant="outline">
+                  Contact Sales
+                </Button>
+              </Link>
+              
             </CardFooter>
           </Card>
         </div>
