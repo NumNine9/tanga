@@ -11,24 +11,36 @@ import navlogo from "../../public/logo-no-background.svg"
 import nologo from "../../public/logo-no-background.svg"
 import ccIcon from "../../public/CCicon.png"
 import clIcon from "../../public/commit-log.jpg"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import PricingSection from "@/components/PricingSection"
 import { BookingSection } from "@/components/booking-section"
 import VideoIntro from "@/components/video-intro"
+import RotatingText from "@/components/RotatingText"
 
 
 export default function LandingPage() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
+  // State to track current phrase index
+  const [index, setIndex] = useState(0);
+  const [direction, setDirection] = useState('up'); // Animation direction
+  // List of replacement phrases
+  const phrases = [
+    "Digital Experiences",
+    "Interactive Solutions",
+    "Innovative Platforms",
+    "Smart Applications",
+    "Web-Based Innovations"
+  ];
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    alert("Message sent to TS!")
-    setEmail("")
-    setMessage("")
-    setName("")
-  }
+// Update the index every 1 second
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setDirection('up');
+      setIndex((prev) => (prev + 1) % phrases.length);
+    }, 1500); // Change every 1.5 seconds (adjustable)
+
+    return () => clearInterval(interval);
+  }, [phrases.length]);
+
   return (
     <div className="flex min-h-screen flex-col">
       {/* Header */}
@@ -82,9 +94,7 @@ export default function LandingPage() {
             <div className="grid gap-8 lg:grid-cols-[1fr_1fr] lg:gap-12 xl:gap-24 items-center">
               <div className="flex flex-col justify-center space-y-6">
                 <div className="space-y-4">
-                  <h1 className="text-4xl font-bold tracking-tight sm:text-5xl xl:text-6xl/none bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-[#468fe1]">
-                    Transforming Ideas into Digital Experiences
-                  </h1>
+                  <RotatingText/>
                   <p className="max-w-[600px] text-gray-600 md:text-xl dark:text-gray-400">
                     We design and develop stunning websites and applications that drive growth and deliver exceptional
                     user experiences.
@@ -508,28 +518,6 @@ export default function LandingPage() {
             </div>
           </div>
         </section>
-
-        {/* CTA Section */}
-        {/* <section className="w-full md:py-10 lg:py-20 bg-gray-50">
-          <div className=" px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                  Ready to Start Your Project?
-                </h2>
-                <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Let's create something amazing together. Contact us today to get started.
-                </p>
-              </div>
-              <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                <Button className="bg-gradient-to-r from-[#468fe1] to-purple-600 hover:from-purple-600 hover:to-[#468fe1]">
-                  Get Started
-                </Button>
-                <Button variant="outline">Learn More</Button>
-              </div>
-            </div>
-          </div>
-        </section> */}
         
       </main>
 
